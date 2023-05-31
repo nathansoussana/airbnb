@@ -1,0 +1,11 @@
+<h1>Equipments</h1>
+
+<ol>
+  <% @equipments.each do |equipment| %>
+    <li><%= link_to equipment.sport, equipment_path(equipment) %></li>
+  <% end %>
+</ol>
+
+<%= link_to "Add new equipment!",
+  new_equipment_path
+%>
