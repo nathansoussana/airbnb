@@ -1,0 +1,23 @@
+<div>
+
+<h2>Equipment: <%= @equipment.equipmentname %></h2>
+<p>Sport: <%= @equipment.sport %></p>
+<p>Description: <%= @equipment.description %></p>
+<p>Price: <%= @equipment.price %>€</p>
+
+
+<%= link_to "Edit this equipment!",
+  edit_equipment_path(@equipment)
+%><br>
+
+<%= link_to "Delete",
+  equipment_path(@equipment),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%><br>
+
+
+<%= link_to "Show all equipments",
+  equipments_path
+%><br>
+
+</div>

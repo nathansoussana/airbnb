@@ -2,7 +2,7 @@
 
 <ol>
   <% @equipments.each do |equipment| %>
-    <li><%= link_to equipment.sport, equipment_path(equipment) %></li>
+    <li><%= link_to equipment.equipmentname, equipment_path(equipment) %></li>
   <% end %>
 </ol>
 
