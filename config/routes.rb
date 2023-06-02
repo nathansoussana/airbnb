@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   #get "equipments/:id", to: "equipments#show", as: :equipment
   #patch "equipments/:id", to: "equipments#update"
   #delete "equipments/:id", to: "equipments#destroy"
-  resources :equipments
+  resources :equipment
 
 end

@@ -1,4 +1,4 @@
-class EquipmentsController < ApplicationController
+class EquipmentController < ApplicationController
 
   def index
     @equipments = Equipment.all
@@ -31,7 +31,7 @@ class EquipmentsController < ApplicationController
   def destroy
     @equipment = Equipment.find(params[:id])
     @equipment.destroy
-    redirect_to equipments_path, status: :see_other
+    redirect_to equipment_index_path, status: :see_other
   end
 
   private
