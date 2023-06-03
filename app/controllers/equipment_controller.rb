@@ -14,8 +14,12 @@ class EquipmentController < ApplicationController
 
   def create
     @equipment = Equipment.new(equipment_params)
-    @equipment.save # Will raise ActiveModel::ForbiddenAttributesError
-    redirect_to equipment_path(@equipment)
+    @equipment.user_id = current_user.id
+    if @equipment.save # Will raise ActiveModel::ForbiddenAttributesError
+      redirect_to equipment_path(@equipment), notice: "Equipment was successfully added."
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
