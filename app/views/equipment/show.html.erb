@@ -1,23 +1,12 @@
-<div>
-
+<div class="container my-5">
   <h2>Equipment: <%= @equipment.equipmentname %></h2>
   <p>Sport: <%= @equipment.sport %></p>
   <p>Description: <%= @equipment.description %></p>
   <p>Price: <%= @equipment.price %>€</p>
 
-
-  <%= link_to "Edit this equipment!",
-    edit_equipment_path(@equipment)
-  %><br>
-
-  <%= link_to "Delete",
-    equipment_path(@equipment),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-  %><br>
-
-
-  <%= link_to "Show all equipments",
-    equipment_index_path
-  %><br>
-
+  <div class="my-4">
+  <%= link_to "Edit", edit_equipment_path(@equipment), class: "btn btn-success" %>
+  <%= link_to "Delete", equipment_path(@equipment), class: "btn btn-outline-danger", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  <%= link_to "Back", equipment_index_path, class: "btn btn-outline-secondary" %>
+  </div>
 </div>
