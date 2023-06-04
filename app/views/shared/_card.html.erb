@@ -1,0 +1,14 @@
+<div class="card">
+  <%= link_to(equipment_path(equipment)) do %>
+    <%= image_tag("https://images.unsplash.com/photo-1571068316344-75bc76f77890?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80", alt: "", class: "card-img-top img-fluid", style: "height: 304px; object-fit: cover;") %>
+  <% end %>
+  <div class="card-body">
+    <h6 class="card-title"><%= equipment.sport %></h6>
+    <h4 class="card-title fw-bold"><%= equipment.equipmentname %></h4>
+    <p class="card-text"><%= equipment.description %></p>
+    <div class="d-flex justify-content-between align-items-baseline">
+      <%= link_to "Read More", equipment_path(equipment), class: "btn btn-outline-success" %>
+      <span class="fw-bold">$<%= equipment.price %></span>
+    </div>
+  </div>
+</div>
