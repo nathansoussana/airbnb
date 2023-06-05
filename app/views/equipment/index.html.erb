@@ -1,11 +1,14 @@
-<h1>Equipments</h1>
+<div class="container my-5">
+  
+  <!-- Title and description -->
+  <div class="text-center">
+    <h1>Airbnb</h1>
+    <p>Your sports equipment rental platform.</p>
+  </div>
+  
+  <!-- Search Bar -->
+  <%= render partial: "shared/searchbar" %>
+</div>
 
-<ol>
-  <% @equipments.each do |equipment| %>
-    <li><%= link_to equipment.equipmentname, equipment_path(equipment) %></li>
-  <% end %>
-</ol>
-
-<%= link_to "Add new equipment!",
-  new_equipment_path
-%>
+<!-- Gallery -->
+<%= render partial: "shared/gallery" %>

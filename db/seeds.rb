@@ -6,15 +6,33 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+require 'faker'
+
 puts "Cleaning database..."
 Equipment.destroy_all
 
-puts "Creating equipments..."
-tennis_shoes = {sport: "Tennis", equipmentname: "Tennis shoes", description: "A bit smelly", price: 100}
-golf_driver =  {sport: "Golf", equipmentname: "Driver", description: "Hitting it looong", price: 300}
+puts "Creating users & equipments..."
 
-[tennis_shoes, golf_driver].each do |attributes|
-  equipment = Equipment.create!(attributes)
-  puts "Created #{equipment.equipmentname}"
+# Create 20 equipment records with associated user
+20.times do
+  user = User.create!(
+    email: Faker::Internet.email,
+    password: Faker::Internet.password
+  )
+
+  equipment = Equipment.create!(
+    sport: Faker::Sport.sport,
+    equipmentname: Faker::Appliance.equipment,
+    description: Faker::Lorem.sentence,
+    price: Faker::Commerce.price(range: 10..100),
+    user: user
+  )
 end
+
+
+# [tennis_shoes, golf_driver].each do |attributes|
+#   equipment = Equipment.create!(attributes)
+#   puts "Created #{equipment.equipmentname}"
+# end
+
 puts "Finished!"
