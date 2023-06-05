@@ -1,8 +1,9 @@
 <div class="container-fluid form my-5">
-  <h2>Equipment: <%= @equipment.equipmentname %></h2>
-  <p>Sport: <%= @equipment.sport %></p>
-  <p>Description: <%= @equipment.description %></p>
-  <p>Price: <%= @equipment.price %>€</p>
+    <h2 class="mb-4"><%= @equipment.equipmentname %></h2>
+      <p>Sport: <%= @equipment.sport %></p>
+      <p>Description: <%= @equipment.description %></p>
+      <p>Price: <%= @equipment.price %>€</p>
+
 
   <div class="my-4">
   <%= link_to "Edit", edit_equipment_path(@equipment), class: "btn btn-success" %>
