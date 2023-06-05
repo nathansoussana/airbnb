@@ -1,26 +1,17 @@
-<div>
+<div class="container-fluid form my-5">
+    <h2 class="mb-4"><%= @equipment.equipmentname %></h2>
+      <p>Sport: <%= @equipment.sport %></p>
+      <p>Description: <%= @equipment.description %></p>
+      <p>Price: <%= @equipment.price %>€</p>
 
-  <h2>Equipment: <%= @equipment.equipmentname %></h2>
-  <p>Sport: <%= @equipment.sport %></p>
-  <p>Description: <%= @equipment.description %></p>
-  <p>Price: <%= @equipment.price %>€</p>
 
-
-  <% if policy(@equipment).edit? %>
-    <%= link_to "Edit this equipment!", edit_equipment_path(@equipment) %>
-  <% end %>
-
-  <br>
-
-  <% if policy(@equipment).destroy? %>
-   <%= link_to "Delete", equipment_path(@equipment),
-     data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-  <% end %>
-
-  <br>
-
-  <%= link_to "Show all equipments",
-    equipment_index_path
-  %><br>
-
+  <div class="my-4">
+    <% if policy(@equipment).edit? %>
+      <%= link_to "Edit", edit_equipment_path(@equipment), class: "btn btn-success" %>
+    <% end %>
+    <% if policy(@equipment).destroy? %>
+      <%= link_to "Delete", equipment_path(@equipment), class: "btn btn-outline-danger", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    <% end %>
+  <%= link_to "Back", equipment_index_path, class: "btn btn-outline-secondary" %>
+  </div>
 </div>
