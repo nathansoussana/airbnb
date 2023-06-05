@@ -1,4 +1,5 @@
 class EquipmentController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
 
   def index
     @equipments = policy_scope(Equipment)
