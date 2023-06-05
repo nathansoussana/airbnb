@@ -6,15 +6,18 @@
   <p>Price: <%= @equipment.price %>€</p>
 
 
-  <%= link_to "Edit this equipment!",
-    edit_equipment_path(@equipment)
-  %><br>
+  <% if policy(@equipment).edit? %>
+    <%= link_to "Edit this equipment!", edit_equipment_path(@equipment) %>
+  <% end %>
 
-  <%= link_to "Delete",
-    equipment_path(@equipment),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-  %><br>
+  <br>
 
+  <% if policy(@equipment).destroy? %>
+   <%= link_to "Delete", equipment_path(@equipment),
+     data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  <% end %>
+
+  <br>
 
   <%= link_to "Show all equipments",
     equipment_index_path
