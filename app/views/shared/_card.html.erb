@@ -7,17 +7,17 @@
   <!-- Contents -->
   <div class="card-body">
     <!-- Sport -->
-    <h6 class="card-title"><%= equipment.sport %></h6>
+    <h6 class="card-title ms-1 mt-1"><%= equipment.sport %></h6>
 
     <!-- Equipment name -->
-    <h4 class="card-title fw-bold"><%= equipment.equipmentname %></h4>
+    <h5 class="card-title fw-bold ms-1"><%= equipment.equipmentname %></h5>
 
     <!-- Link to equipment details -->
     <div class="d-flex justify-content-between align-items-baseline">
-      <%= link_to "Read More", equipment_path(equipment), class: "btn btn-outline-success card-button mt-2" %>
+      <%= link_to "Read More", equipment_path(equipment), class: "btn btn-outline-success card-button mt-2 mb-1 ms-1" %>
       
       <!-- Price -->
-      <span class="fw-bold card-price px-1">$ <%= equipment.price %></span>
+      <span class="fw-bold card-price pe-1">$<%= equipment.price %></span>
     </div>
   </div>
 </div>
