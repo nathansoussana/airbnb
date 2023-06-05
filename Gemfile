@@ -15,6 +15,9 @@ gem "sprockets-rails"
 #added gem devise
 gem "devise"
 
+#added pundit for authorization
+gem "pundit"
+
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 
