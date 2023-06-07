@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get "/about", to: "pages#about"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  resources :equipment
+  resources :equipment do
+    resources :bookings
+  end
 
 end
