@@ -10,9 +10,8 @@
       </button>
     </form> %>
 
-    <div class="row justify-content-center">
       <div class="d-flex justify-content-center">
-        <%= form_with url: equipment_index_path, method: :get, class: "d-flex form-control me-2" do %>
+        <%= form_with url: equipment_index_path, method: :get, class: "d-flex form-control me-2 searchbar" do %>
           <%= text_field_tag :query,
                 params[:query],
                 class: "form-control me-3",
@@ -21,7 +20,4 @@
           <%= submit_tag "Go", name: "", class: "btn btn-outline-success" %>
         <% end %>
       </div>
-    </div>
-
-
 </div>
