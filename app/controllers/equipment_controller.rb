@@ -3,6 +3,12 @@ class EquipmentController < ApplicationController
 
   def index
     @equipments = policy_scope(Equipment)
+
+      if params[:query].present?
+        sql_subquery = "sport ILIKE :query OR equipmentname ILIKE :query OR description ILIKE :query"
+        @equipments = @equipments.where(sql_subquery, query: "%#{params[:query]}%")
+      end
+
   end
 
   def show
