@@ -21,7 +21,7 @@
   <div class="my-5">
     <h4>Bookings</h4>
     <% @equipment.bookings.each do |booking| %>
-      <p>Booked from <%= booking.start_date %></p>
+      <p>Booked from <%= booking.start_date %> to <%= booking.end_date %> by <%= booking.user.email %></p>
     <% end %>
   </div>
 
