@@ -19,7 +19,7 @@
   </div>
 
   <div class="my-5">
-    <h4>Bookings</h4>
+    <h4 class="mb-4">Bookings</h4>
     <% @equipment.bookings.each do |booking| %>
       <p>Booked from <%= booking.start_date %> to <%= booking.end_date %> by <%= booking.user.email %></p>
     <% end %>
