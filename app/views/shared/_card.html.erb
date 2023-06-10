@@ -1,9 +1,16 @@
 <div class="card mb-2">
   <!-- Image -->
   <%= link_to equipment_path(equipment), class: "card-link" do %>
+<<<<<<< HEAD
   <% if equipment.photo.present? %>
    <%= cl_image_tag(equipment.photo.key, class: "card-img-top img-fluid", style: "height: 304px; object-fit: cover;") %>
    <% end %>
+=======
+    <!-- <%= image_tag("https://images.unsplash.com/photo-1571068316344-75bc76f77890?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80", alt: "", class: "card-img-top img-fluid", style: "height: 304px; object-fit: cover;") %> -->
+    <% if equipment.photo.present? %>
+    <%= cl_image_tag equipment.photo.key, class: "card-img-top img-fluid", style: "height: 304px; object-fit: cover;" %>
+    <% end %>
+>>>>>>> 10c789ba0653d905a59ebf6cb03699096c9767bc
   <% end %>
 
   <!-- Contents -->
