@@ -3,6 +3,14 @@ class EquipmentController < ApplicationController
 
   def index
     @equipments = policy_scope(Equipment)
+    @markers = @equipments.map do |equipment|
+      {
+        lat: equipment.latitude,
+        lng: equipment.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {equipment: equipment}),
+        marker_html: render_to_string(partial: "marker")
+      }
+    end
   end
 
   def show
@@ -48,7 +56,7 @@ class EquipmentController < ApplicationController
   private
 
   def equipment_params
-    params.require(:equipment).permit(:sport, :equipmentname, :description, :price)
+    params.require(:equipment).permit(:sport, :equipmentname, :description, :price, :address)
   end
 
 end
