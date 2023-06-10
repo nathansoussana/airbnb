@@ -18,6 +18,8 @@ gem "devise"
 #added pundit for authorization
 gem "pundit"
 
+gem "cloudinary"
+
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 
