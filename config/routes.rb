@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   root to: "equipment#index"
   get "/about", to: "pages#about"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
   resources :equipment
-
+  resources :users
 end

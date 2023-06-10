@@ -10,14 +10,19 @@ require 'faker'
 
 puts "Cleaning database..."
 Equipment.destroy_all
+User.destroy_all
 
-puts "Creating users & equipments..."
+puts "Creating users & equipment..."
 
 # Create 20 equipment records with associated user
 20.times do
   user = User.create!(
     email: Faker::Internet.email,
-    password: Faker::Internet.password
+    password: Faker::Internet.password,
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    about: Faker::Lorem.sentence,
+    birthday: Faker::Date.birthday(min_age: 18, max_age: 65).strftime('%Y-%m-%d')
   )
 
   equipment = Equipment.create!(
@@ -28,6 +33,7 @@ puts "Creating users & equipments..."
     user: user
   )
 end
+
 
 
 # [tennis_shoes, golf_driver].each do |attributes|
