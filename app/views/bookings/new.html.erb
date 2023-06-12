@@ -1,0 +1,12 @@
+<div class="container-fluid form my-5">
+  <h2>Book <%= @equipment.equipmentname %></h2>
+  
+  <div class="form-inputs my-4">
+    <%= simple_form_for [@equipment, @booking] do |f| %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.submit "Book Now", class: "btn btn-primary" %>
+    <%= link_to "Back", equipment_index_path, class: "btn btn-outline-secondary" %>
+  </div>
+<% end %>
+</div>
