@@ -3,6 +3,7 @@ class EquipmentController < ApplicationController
 
   def index
     @equipments = policy_scope(Equipment)
+
     @markers = @equipments.map do |equipment|
       {
         lat: equipment.latitude,
@@ -11,6 +12,14 @@ class EquipmentController < ApplicationController
         marker_html: render_to_string(partial: "marker")
       }
     end
+
+
+      if params[:query].present?
+        sql_subquery = "sport ILIKE :query OR equipmentname ILIKE :query OR description ILIKE :query"
+        @equipments = @equipments.where(sql_subquery, query: "%#{params[:query]}%")
+      end
+
+
   end
 
   def show
@@ -56,7 +65,6 @@ class EquipmentController < ApplicationController
   private
 
   def equipment_params
-    params.require(:equipment).permit(:sport, :equipmentname, :description, :price, :address)
+    params.require(:equipment).permit(:sport, :equipmentname, :description, :price, :address, :photo)
   end
-
 end

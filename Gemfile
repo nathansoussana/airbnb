@@ -18,6 +18,8 @@ gem "devise"
 #added pundit for authorization
 gem "pundit"
 
+gem "cloudinary"
+
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 
@@ -54,7 +56,11 @@ gem "bootsnap", require: false
 # Use Sass to process CSS
 gem "sassc-rails"
 
+
 gem "geocoder"
+
+gem "cloudinary"
+
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
