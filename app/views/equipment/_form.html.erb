@@ -4,6 +4,7 @@
     <%= f.input :equipmentname, label: 'Name of equipment' %>
     <%= f.input :description, as: :text %>
     <%= f.input :price, hint: 'No special characters' %>
+    <%= f.input :photo, as: :file %>
     <%= f.submit class: "btn btn-success" %>
     <%= link_to "Back", root_path, class: "btn btn-outline-secondary" %>
   </div>
