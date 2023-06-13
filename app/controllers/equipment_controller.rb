@@ -15,7 +15,7 @@ class EquipmentController < ApplicationController
 
 
       if params[:query].present?
-        sql_subquery = "sport ILIKE :query OR equipmentname ILIKE :query OR description ILIKE :query"
+        sql_subquery = "sport ILIKE :query OR equipmentname ILIKE :query OR description ILIKE :query OR address ILIKE :query"
         @equipments = @equipments.where(sql_subquery, query: "%#{params[:query]}%")
       end
 
