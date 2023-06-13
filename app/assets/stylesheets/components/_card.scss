@@ -5,3 +5,39 @@
 .card-price {
   font-size: 1.15rem;
 }
+
+@media (min-width: 0) {
+  .card-photo-index {
+    height: 350px !important;
+  }
+}
+
+@media (min-width: 576px) {
+  .card-photo-index {
+    height: 244px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .card-photo-index {
+    height: 334px !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .card-photo-index {
+    height: 294px !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card-photo-index {
+    height: 259px !important;
+  }
+}
+
+@media (min-width: 1400px) {
+  .card-photo-index {
+    height: 304px !important;
+  }
+}

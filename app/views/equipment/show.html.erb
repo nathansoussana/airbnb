@@ -5,16 +5,32 @@
   <%# Equipment Image %>
   <div class="row d-flex">
     <div class="col-md-5 mb-3 pl-0 align-self-center">
-      <img src="http://res.cloudinary.com/dmmduel0o/image/upload/v1/development/ilcql1ekseqursdt6rri376ftlml" class="img-fluid img-show" alt="Equipment Image">
+      <%= cl_image_tag(@equipment.photo.key, width: "100%", crop: :fill, class: "img-fluid img-show", alt: "Equipment Image") %>
     </div>
 
     <%# Equipment Details %>
     <div class="col-md-7 my-3 align-self-center equipment-details">
+
+      <%# Sport %>
       <h5><%= @equipment.sport %></h5>
-      <h2 class="mb-4"><%= @equipment.equipmentname %></h2>
+
+      <%# Equipment Name %>
+      <h2 class="mb-3"><%= @equipment.equipmentname %></h2>
+      <ul class="location-price d-flex">
+
+        <%# Price %>
+        <li class="pe-4 d-flex">
+          <img src="https://cdn-icons-png.flaticon.com/512/112/112548.png" alt="Price" width="18px" class="align-self-center me-2">
+          <span class="align-self-center"><%= @equipment.price %>€ / day</span>
+        </li>
+
+        <%# Location %>
+        <li class="pe-4 d-flex">
+          <img src="https://cdn-icons-png.flaticon.com/512/2838/2838912.png" alt="Location" width="18px" class="align-self-center me-1">
+          <span class="align-self-center"><%= @equipment.address %></span>
+        </li>
+      </ul>
       <p><%= @equipment.description %></p>
-      <p><%= @equipment.price %>€ / day</p>
-      <p><%= @equipment.address %></p>
 
       <%# Buttons %>
       <div class="my-4">

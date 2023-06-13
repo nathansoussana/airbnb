@@ -2,7 +2,7 @@
   <!-- Image -->
   <%= link_to equipment_path(equipment), class: "card-link" do %>
   <% if equipment.photo.present? %>
-   <%= cl_image_tag(equipment.photo.key, class: "card-img-top img-fluid", style: "height: 304px; object-fit: cover;") %>
+   <%= cl_image_tag(equipment.photo.key, class: "card-img-top img-fluid card-photo-index", style: "height: 304px; object-fit: cover;") %>
    <% end %>
   <% end %>
 
