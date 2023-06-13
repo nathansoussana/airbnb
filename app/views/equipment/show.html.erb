@@ -5,7 +5,7 @@
   <%# Equipment Image %>
   <div class="row d-flex">
     <div class="col-md-5 mb-3 pl-0 align-self-center">
-      <%= cl_image_tag(@equipment.photo.key, width: "100%", crop: :fill, class: "img-fluid img-show", alt: "Equipment Image") %>
+      <%= cl_image_tag(@equipment.photo.key, class: "img-fluid img-show", alt: "Equipment Image", style: "width: 100%; height: auto;") %>
     </div>
 
     <%# Equipment Details %>

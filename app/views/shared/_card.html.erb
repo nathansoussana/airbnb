@@ -7,19 +7,26 @@
   <% end %>
 
   <!-- Contents -->
-  <div class="card-body">
+  <div class="card-body ms-1">
     <!-- Sport -->
-    <p class="card-title ms-1 mt-1"><%= equipment.sport %></p>
+    <p class="card-title mt-1"><%= equipment.sport %></p>
 
     <!-- Equipment name -->
-    <h5 class="card-title ms-1"><%= equipment.equipmentname %></h5>
+    <h5 class="card-title"><%= equipment.equipmentname %></h5>
 
-    <!-- Link to equipment details -->
-    <div class="d-flex justify-content-between align-items-baseline">
-      <%= link_to "View Gear", equipment_path(equipment), class: "btn btn-outline-success card-button mt-2 mb-1 ms-1" %>
+    <ul class="location-price mt-3">
 
-      <!-- Price -->
-      <span class="card-price pe-1">$<%= equipment.price %> / day</span>
-    </div>
+        <%# Price %>
+        <li class="d-flex pb-2">
+          <img src="https://cdn-icons-png.flaticon.com/512/112/112548.png" alt="Price" width="18px" class="align-self-center me-2">
+          <span class="align-self-center"><%= equipment.price %>€ / day</span>
+        </li>
+
+        <%# Location %>
+        <li class="d-flex">
+          <img src="https://cdn-icons-png.flaticon.com/512/2838/2838912.png" alt="Location" width="18px" class="align-self-center me-1">
+          <span class="align-self-center"><%= equipment.address %></span>
+        </li>
+      </ul>
   </div>
 </div>
