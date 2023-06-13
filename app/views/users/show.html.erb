@@ -1,4 +1,17 @@
-<h2><strong>Name</strong></h2>
-<p><%= @user.first_name %> <%= @user.last_name %></p>
-<h3><strong>About me </strong></h3>
-<p><%= @user.about %> </p>
+<div class="profile-container">
+  <div class="profile-header">
+    <h2><strong>Name</strong></h2>
+    <p><%= @user.first_name %> <%= @user.last_name %></p>
+  </div>
+
+  <div class="profile-about">
+    <h3><strong>About me</strong></h3>
+    <p><%= @user.about %></p>
+  </div>
+
+  <div class="profile-buttons">
+    <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-outline-success card-button" %>
+    <%= link_to "The equipments that I rented", my_rented_equipment_path, class: "btn btn-outline-success card-button" %>
+    <%= link_to "My Rentable Gear", my_offers_path, class: "btn btn-outline-success card-button" %>
+  </div>
+</div>
