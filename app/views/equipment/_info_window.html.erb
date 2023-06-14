@@ -1,6 +1,8 @@
 <%# Photo %>
 <%= link_to equipment_path(equipment) do %>
-  <%= cl_image_tag(equipment.photo.key, class: "img-fluid img-show", alt: "Equipment Image", style: "width: 100%; height: auto; margin-bottom: 10px") %>
+  <% if equipment.photo.present? %>
+    <%= cl_image_tag(equipment.photo.key, class: "img-fluid img-show", alt: "Equipment Image", style: "width: 100%; height: auto; margin-bottom: 10px") %>
+  <% end %>
 <% end %>
 
 <%# Sports Category %>
