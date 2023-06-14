@@ -33,11 +33,26 @@
   </div>
 
   <%# Bookings Section %>
-  <div class="booking-card">
-    <h3 class="mb-4 booking-title"><%= pluralize( @equipment.bookings.size, 'Booking' ) %></h3>
-    <% @equipment.bookings.each do |booking| %>
-    <div class = "container">
-      <p>Booked from <%= booking.start_date %> to <%= booking.end_date %> by <%= booking.user.email %></p>
-    <% end %>
-  </div>
+  <div class="booking-grid">
+<% @equipment.bookings.each do |booking| %>
+<div class="booking-card">
+  <button class="dismiss" type="button">×</button>
+  <div class="header">
+    <div class="image">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M20 7L9.00004 18L3.99994 13" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+      </div>
+      <div class="content">
+         <%#<h3 class="mb-4 booking-title"><%= pluralize( @equipment.bookings.size, 'Booking' ) %></h3>
+
+         <p class="message">You have received the following booking(s):</p>
+         <p>Booked: <%= booking.start_date %> to <%= booking.end_date %> by <%= booking.user.email %></p>
+
+         </div>
+         <div class="actions">
+            <button class="history" type="button">History</button>
+            </div>
+            </div>
+            </div>
+
+<% end %>
 </div>
