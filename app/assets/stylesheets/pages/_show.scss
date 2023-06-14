@@ -1,0 +1,18 @@
+.location-price {
+  list-style: none;
+  padding-left: 0;
+}
+
+@media (min-width: 768px) {
+  .container-show {
+    margin: 40px 0 0 0;
+  }
+
+  .equipment-details {
+    padding: 0 40px;
+  }
+
+  .img-show {
+    padding-left: 0;
+  }
+}
