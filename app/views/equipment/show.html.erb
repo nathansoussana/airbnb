@@ -33,9 +33,10 @@
   </div>
 
   <%# Bookings Section %>
-  <div class="my-5">
+  <div class="booking-card">
     <h3 class="mb-4 booking-title"><%= pluralize( @equipment.bookings.size, 'Booking' ) %></h3>
     <% @equipment.bookings.each do |booking| %>
+    <div class = "container">
       <p>Booked from <%= booking.start_date %> to <%= booking.end_date %> by <%= booking.user.email %></p>
     <% end %>
   </div>
