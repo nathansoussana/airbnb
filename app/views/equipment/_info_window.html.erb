@@ -1,2 +1,13 @@
-<h2><%= equipment.equipmentname %></h2>
-<p><%= equipment.address %></p>
+<%# Photo %>
+<%= link_to equipment_path(equipment) do %>
+  <%= cl_image_tag(equipment.photo.key, class: "img-fluid img-show", alt: "Equipment Image", style: "width: 100%; height: auto; margin-bottom: 10px") %>
+<% end %>
+
+<%# Sports Category %>
+<p style="margin-bottom: 5px"><%= equipment.sport %></p>
+
+<%# Equipment Name %>
+<h5><%= equipment.equipmentname %></h5>
+
+<%# Address %>
+<p style="margin-bottom: 0"><img src="https://cdn-icons-png.flaticon.com/512/2838/2838912.png" alt="Location" width="18px" class="me-1"><%= equipment.address %></p>
