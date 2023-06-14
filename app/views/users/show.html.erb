@@ -1,17 +1,35 @@
-<div class="profile-container">
-  <div class="profile-header">
-    <h2><strong>Name</strong></h2>
-    <p><%= @user.first_name %> <%= @user.last_name %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h2><strong>Name</strong></h2>
+      <p><%= @user.first_name %> <%= @user.last_name %></p>
+
+      <h3><strong>About Me</strong></h3>
+      <p><%= @user.about %></p>
+
+  <div class="container my-5">
+  <h3><strong>My Equipment</strong></h3>
+  <div class="row">
+    <% @user.equipments.each do |equipment| %>
+      <div class="col-sm-5">
+        <%= render partial: "shared/card", locals: { equipment: equipment } %>
+      </div>
+    <% end %>
   </div>
 
-  <div class="profile-about">
-    <h3><strong>About me</strong></h3>
-    <p><%= @user.about %></p>
+  <h3><strong>Equipments That I Rent</strong></h3>
+  <div class="row">
+    <% @user.rented_equipment.each do |equipment| %>
+      <div class="col-sm-5">
+        <%= render partial: "shared/card", locals: { equipment: equipment } %>
+      </div>
+    <% end %>
   </div>
+</div>
 
-  <div class="profile-buttons">
-    <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-outline-success card-button" %>
-    <%= link_to "The equipments that I rented", my_rented_equipment_path, class: "btn btn-outline-success card-button" %>
-    <%= link_to "My Rentable Gear", my_offers_path, class: "btn btn-outline-success card-button" %>
+    <div class="col-md-6">
+      <!-- Edit Profile Button -->
+      <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-outline-success card-button mt-2 mb-1 ms-1" %>
+    </div>
   </div>
 </div>

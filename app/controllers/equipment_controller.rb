@@ -62,17 +62,7 @@ class EquipmentController < ApplicationController
     redirect_to equipment_index_path, status: :see_other
   end
 
-  def my_offers
-    @my_equipments = current_user.equipments
-  end
-
-  def my_rented_equipment
-    @rented_equipment = current_user.bookings.includes(:equipment).map(&:equipment)
-  end
-
-
-
-  private
+   private
 
   def equipment_params
     params.require(:equipment).permit(:sport, :equipmentname, :description, :price, :address, :photo)
