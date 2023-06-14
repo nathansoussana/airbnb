@@ -1,0 +1,35 @@
+<div class="container mt-5">
+  <!-- User's Name -->
+  <h1 class="mb-4"><strong><%= @user.first_name %> <%= @user.last_name %></strong></h1>
+
+  <!-- About Me Section -->
+  <h5><strong>About Me</strong></h5>
+  <p><%= @user.about %></p>
+
+  <!-- Edit Profile Button -->
+  <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-outline-success card-button my-1" %>
+
+  <!-- My Equipment Section -->
+  <div id="gallery" class="my-5">
+    <h4 class="mb-3"><strong>My Gear</strong></h4>
+    <div class="row">
+      <% @user.equipments.each do |equipment| %>
+        <div class="col-sm-6 col-lg-4 col-xl-3 mb-3">
+          <%= render partial: "shared/card", locals: { equipment: equipment } %>
+        </div>
+      <% end %>
+    </div>
+
+    <!-- Equipments That I Rent Section -->
+    <h4 class="mt-4 mb-3 class="mt-5"><strong>Currently renting</strong></h4>
+    <div class="row">
+      <% @user.rented_equipment.each do |equipment| %>
+        <div class="col-sm-6 col-lg-4 col-xl-3 mb-3">
+          <%= render partial: "shared/card", locals: { equipment: equipment } %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  
+</div>

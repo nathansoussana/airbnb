@@ -62,7 +62,7 @@ class EquipmentController < ApplicationController
     redirect_to equipment_index_path, status: :see_other
   end
 
-  private
+   private
 
   def equipment_params
     params.require(:equipment).permit(:sport, :equipmentname, :description, :price, :address, :photo)
