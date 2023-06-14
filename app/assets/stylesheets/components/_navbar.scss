@@ -1,6 +1,8 @@
 .navbar-lewagon {
+  display: flex;
   justify-content: space-between;
   background: white;
+  height: auto
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,15 +11,11 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+  height: auto; /* Maintain the aspect ratio of the logo */
 }
 
 .search-field {
   display: flex;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
 }
 
 .navbar .dropdown-menu {

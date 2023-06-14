@@ -3,6 +3,7 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    @booking.equipment = @equipment
     authorize @booking
   end
 
@@ -22,7 +23,7 @@ class BookingsController < ApplicationController
 
   def set_equipment
     @equipment = Equipment.find(params[:equipment_id])
-    
+
   end
   def booking_params
     params.require(:booking).permit(:start_date, :end_date)
