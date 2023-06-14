@@ -1,35 +1,35 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-6">
-      <h2><strong>Name</strong></h2>
-      <p><%= @user.first_name %> <%= @user.last_name %></p>
+<div class="container mt-5">
+  <!-- User's Name -->
+  <h1 class="mb-4"><strong><%= @user.first_name %> <%= @user.last_name %></strong></h1>
 
-      <h3><strong>About Me</strong></h3>
-      <p><%= @user.about %></p>
+  <!-- About Me Section -->
+  <h5><strong>About Me</strong></h5>
+  <p><%= @user.about %></p>
 
-  <div class="container my-5">
-  <h3><strong>My Equipment</strong></h3>
-  <div class="row">
-    <% @user.equipments.each do |equipment| %>
-      <div class="col-sm-5">
-        <%= render partial: "shared/card", locals: { equipment: equipment } %>
-      </div>
-    <% end %>
-  </div>
+  <!-- Edit Profile Button -->
+  <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-outline-success card-button my-1" %>
 
-  <h3><strong>Equipments That I Rent</strong></h3>
-  <div class="row">
-    <% @user.rented_equipment.each do |equipment| %>
-      <div class="col-sm-5">
-        <%= render partial: "shared/card", locals: { equipment: equipment } %>
-      </div>
-    <% end %>
-  </div>
-</div>
+  <!-- My Equipment Section -->
+  <div id="gallery" class="my-5">
+    <h4 class="mb-3"><strong>My Gear</strong></h4>
+    <div class="row">
+      <% @user.equipments.each do |equipment| %>
+        <div class="col-sm-6 col-lg-4 col-xl-3 mb-3">
+          <%= render partial: "shared/card", locals: { equipment: equipment } %>
+        </div>
+      <% end %>
+    </div>
 
-    <div class="col-md-6">
-      <!-- Edit Profile Button -->
-      <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-outline-success card-button mt-2 mb-1 ms-1" %>
+    <!-- Equipments That I Rent Section -->
+    <h4 class="mt-4 mb-3 class="mt-5"><strong>Currently renting</strong></h4>
+    <div class="row">
+      <% @user.rented_equipment.each do |equipment| %>
+        <div class="col-sm-6 col-lg-4 col-xl-3 mb-3">
+          <%= render partial: "shared/card", locals: { equipment: equipment } %>
+        </div>
+      <% end %>
     </div>
   </div>
+
+  
 </div>
