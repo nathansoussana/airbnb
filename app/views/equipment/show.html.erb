@@ -5,7 +5,9 @@
   <%# Equipment Image %>
   <div class="row d-flex">
     <div class="col-md-5 mb-3 pl-0 align-self-center">
+        <div class="equipment-img">
       <%= cl_image_tag(@equipment.photo.key, class: "img-fluid img-show", alt: "Equipment Image", style: "width: 100%; height: auto;") %>
+    </div>
     </div>
 
     <%# Equipment Details %>
@@ -60,13 +62,10 @@
       <div class="content">
          <%#<h3 class="mb-4 booking-title"><%= pluralize( @equipment.bookings.size, 'Booking' ) %></h3>
 
-         <p class="message">You have received the following booking(s):</p>
+         <p class="message">Your booking is confirmed:</p>
          <p>Booked: <%= booking.start_date %> to <%= booking.end_date %> by <%= booking.user.email %></p>
 
          </div>
-         <div class="actions">
-            <button class="history" type="button">History</button>
-            </div>
             </div>
             </div>
 
