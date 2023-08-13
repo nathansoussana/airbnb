@@ -4,8 +4,10 @@
   text-align: left;
   border-radius: 1.5rem;
   max-width: 290px;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   background-color: #fff;
+  margin-bottom: 15px;
+  margin-left: 2px;
 }
 
 .dismiss {
@@ -116,6 +118,7 @@
 .booking-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  margin-left: 5px
 }
 
 @keyframes animate {
