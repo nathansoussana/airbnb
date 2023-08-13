@@ -1,58 +1,66 @@
-<div class="container-fluid container-show">
-  
-  <%# Equipment Section %>
+<div class="container-fluid container-show" style="background-image: url('./images/showbackground.jpg');">
 
-  <%# Equipment Image %>
-  <div class="row d-flex">
-    <div class="col-md-5 mb-3 pl-0 align-self-center">
-      <%= cl_image_tag(@equipment.photo.key, class: "img-fluid img-show", alt: "Equipment Image", style: "width: 100%; height: auto;") %>
+    <%# Equipment Section %>
+    <div class="row d-flex">
+        <!-- Equipment Image -->
+        <div class="col-md-5 mb-3 pl-0 align-self-center">
+            <div class="equipment-img">
+                <%= cl_image_tag(@equipment.photo.key, class: "img-fluid img-show", alt: "Equipment Image", style: "width: 100%; height: auto;") %>
+            </div>
+        </div>
+
+        <!-- Equipment Details -->
+        <div class="col-md-7 my-3 align-self-center equipment-details">
+          <div class="equipment-box">
+                <h5 class="sport"><%= @equipment.sport %></h5>
+                <h2 class="equipment-name mb-3"><%= @equipment.equipmentname %></h2>
+                <ul class="info-list">
+                    <li class="info-item price">
+                        <img src="https://cdn-icons-png.flaticon.com/512/112/112548.png" alt="Price" width="18px" class="icon">
+                        <span class="info-text"><%= @equipment.price %>€ / day</span>
+                    </li>
+                    <li class="info-item location">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2838/2838912.png" alt="Location" width="18px" class="icon">
+                        <span class="info-text"><%= @equipment.address %></span>
+                    </li>
+                </ul>
+                <p class="description"><%= @equipment.description %></p>
+                <div class="btn-group">
+                    <% if policy(@equipment).edit? %>
+                        <%= link_to "Edit", edit_equipment_path(@equipment), class: "btn btn-success" %>
+                    <% end %>
+                    <% if policy(@equipment).destroy? %>
+                        <%= link_to "Delete", equipment_path(@equipment), class: "btn btn-outline-danger", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+                    <% end %>
+                    <% unless @equipment.user == current_user %>
+                        <%= link_to "Book", new_equipment_booking_path(@equipment), class: "btn btn-success" %>
+                    <% end %>
+                    <%= link_to "Back", equipment_index_path, class: "btn btn-outline-secondary" %>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <%# Equipment Details %>
-    <div class="col-md-7 my-3 align-self-center equipment-details">
-
-      <%# Sport %>
-      <h5><%= @equipment.sport %></h5>
-
-      <%# Equipment Name %>
-      <h2 class="mb-3"><%= @equipment.equipmentname %></h2>
-      <ul class="location-price d-flex">
-
-        <%# Price %>
-        <li class="pe-4 d-flex">
-          <img src="https://cdn-icons-png.flaticon.com/512/112/112548.png" alt="Price" width="18px" class="align-self-center me-2">
-          <span class="align-self-center"><%= @equipment.price %>€ / day</span>
-        </li>
-
-        <%# Location %>
-        <li class="pe-4 d-flex">
-          <img src="https://cdn-icons-png.flaticon.com/512/2838/2838912.png" alt="Location" width="18px" class="align-self-center me-1">
-          <span class="align-self-center"><%= @equipment.address %></span>
-        </li>
-      </ul>
-      <p><%= @equipment.description %></p>
-
-      <%# Buttons %>
-      <div class="my-4">
-        <% if policy(@equipment).edit? %>
-          <%= link_to "Edit", edit_equipment_path(@equipment), class: "btn btn-success" %>
-        <% end %>
-        <% if policy(@equipment).destroy? %>
-          <%= link_to "Delete", equipment_path(@equipment), class: "btn btn-outline-danger", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-        <% end %>
-        <% unless @equipment.user == current_user %>
-          <%= link_to "Book", new_equipment_booking_path(@equipment), class: "btn btn-success" %>
-        <% end %>
-        <%= link_to "Back", equipment_index_path, class: "btn btn-outline-secondary" %>
-      </div>
+    <%# Bookings Section %>
+    <div class="booking-grid">
+        <% @equipment.bookings.each do |booking| %>
+            <div class="booking-card">
+                <div class="header">
+                    <div class="image">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path d="M20 7L9.00004 18L3.99994 13" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="content">
+                        <p class="message">Your booking is confirmed:</p>
+                        <p>Booked: <%= booking.start_date %> to <%= booking.end_date %> by <%= booking.user.email %></p>
+                    </div>
+                </div>
+            </div>
+                 <% end %>
     </div>
-  </div>
-
-  <%# Bookings Section %>
-  <div class="my-5">
-    <h3 class="mb-4"><%= pluralize( @equipment.bookings.size, 'Booking' ) %></h3>
-    <% @equipment.bookings.each do |booking| %>
-      <p>Booked from <%= booking.start_date %> to <%= booking.end_date %> by <%= booking.user.email %></p>
-    <% end %>
-  </div>
 </div>
