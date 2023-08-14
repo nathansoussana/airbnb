@@ -6,6 +6,8 @@ ruby "3.1.2"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.5"
 
+gem 'webpacker', '~> 5.0'
+
 # Faker
 gem 'faker'
 
@@ -59,8 +61,6 @@ gem "sassc-rails"
 
 gem "geocoder"
 
-gem "cloudinary"
-
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -92,4 +92,3 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
-

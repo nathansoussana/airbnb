@@ -136,10 +136,12 @@
 }
 
 .equipment-box {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #e6e4e4;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: 3498db;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .btn-group {
@@ -147,22 +149,62 @@
   gap: 10px;
 }
 
-.btn {
-  background-color: #2c3e50;;
-  border: 1px #2c3e50;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  width: 100px;
+.info-list {
+  list-style: none; /* Remove bullet points */
+  padding: 0; /* Remove any default padding */
+  margin: 0; /* Remove any default margin */
 }
 
-.btn:hover {
-  background-color: #3498db;
-  border: #3498db;
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Add spacing between items */
 }
 
-.booking-card + .booking-card {
-  margin-top: 10px; /* Adjust this value to control the gap */
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Add spacing between items */
+}
+
+.info-item .icon {
+  margin-right: 5px; /* Add some space between the icon and the text */
+}
+
+.container-show {
+  background-image: url('/assets/showbackground.jpg');
+}
+
+.btn-success {
+  background-color: #66cc99; /* Bright green background color */
+  border-color: #66cc99; /* Matching border color */
+  color: #fff; /* White text color for contrast */
+  transition: background-color 0.3s, border-color 0.3s; /* Smooth transition */
+}
+
+.btn-success:hover {
+  background-color: #4cb280; /* Darker green background color on hover */
+  border-color: #4cb280; /* Matching border color on hover */
+}
+
+.btn-outline-danger {
+  border-color: #ff6666; /* Bright red border color */
+  color: #ff6666; /* Matching text color */
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.btn-outline-danger:hover {
+  background-color: #ff6666; /* Bright red background color on hover */
+  color: #9b0303; /* White text color on hover */
+}
+
+.btn-outline-secondary {
+  border-color: #ff6666; /* Bright gray border color */
+  color: #ff6666; /* Matching text color */
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.btn-outline-secondary:hover {
+  background-color: #999; /* Bright gray background color on hover */
+  color: #4f0000; /* White text color on hover */
 }

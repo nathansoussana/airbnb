@@ -1,4 +1,4 @@
-<div class="container-fluid container-show" style="background-image: url('./images/showbackground.jpg');">
+<div class="container-fluid container-show">
 
     <%# Equipment Section %>
     <div class="row d-flex">
@@ -12,7 +12,7 @@
         <!-- Equipment Details -->
         <div class="col-md-7 my-3 align-self-center equipment-details">
           <div class="equipment-box">
-                <h5 class="sport"><%= @equipment.sport %></h5>
+              <h5 class="sport"><strong><%= @equipment.sport %></strong></h5>
                 <h2 class="equipment-name mb-3"><%= @equipment.equipmentname %></h2>
                 <ul class="info-list">
                     <li class="info-item price">
@@ -23,8 +23,11 @@
                         <img src="https://cdn-icons-png.flaticon.com/512/2838/2838912.png" alt="Location" width="18px" class="icon">
                         <span class="info-text"><%= @equipment.address %></span>
                     </li>
+                    <li class="info-item description">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2838/2838912.png" alt="Location" width="18px" class="icon">
+                        <span class="info-text"><%= @equipment.description %></span>
+                    </li>
                 </ul>
-                <p class="description"><%= @equipment.description %></p>
                 <div class="btn-group">
                     <% if policy(@equipment).edit? %>
                         <%= link_to "Edit", edit_equipment_path(@equipment), class: "btn btn-success" %>
