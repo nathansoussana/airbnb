@@ -116,9 +116,9 @@
 }
 
 .booking-grid {
-  display: grid;
+  display:inline-flex;
   grid-template-columns: 1fr 1fr 1fr;
-  margin-left: 5px
+  border: #4cb280;
 }
 
 @keyframes animate {
@@ -171,19 +171,15 @@
   margin-right: 5px; /* Add some space between the icon and the text */
 }
 
-.container-show {
-  background-image: url('/assets/showbackground.jpg');
-}
-
 .btn-success {
-  background-color: #66cc99; /* Bright green background color */
-  border-color: #66cc99; /* Matching border color */
+  background-color: #4cb280; /* Bright green background color */
+  border-color: #4cb280; /* Matching border color */
   color: #fff; /* White text color for contrast */
   transition: background-color 0.3s, border-color 0.3s; /* Smooth transition */
 }
 
 .btn-success:hover {
-  background-color: #4cb280; /* Darker green background color on hover */
+  background-color: #24573e; /* Darker green background color on hover */
   border-color: #4cb280; /* Matching border color on hover */
 }
 
@@ -199,12 +195,17 @@
 }
 
 .btn-outline-secondary {
-  border-color: #ff6666; /* Bright gray border color */
-  color: #ff6666; /* Matching text color */
+  border-color: #ffffff; /* Bright gray border color */
+  color: #ffffff; /* Matching text color */
   transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Smooth transition */
+  background-color: #4cb280;
 }
 
 .btn-outline-secondary:hover {
-  background-color: #999; /* Bright gray background color on hover */
-  color: #4f0000; /* White text color on hover */
+  background-color: #a00000; /* Bright gray background color on hover */
+  color: #ffd7d7; /* White text color on hover */
+}
+
+.full-page-container{
+  background-image: url("/images/showbackground.jpg");
 }
